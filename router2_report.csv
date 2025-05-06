@@ -1,0 +1,26 @@
+0.0 attach this ROUTER, to entity, Res_0, with packet scheduler, GridResSched_0
+0.0 attach this ROUTER, with router, router1, with link, r1_r2_link, with packet scheduler, r2_Sched
+0.0 register this entity to GridInformationService entity.
+0.0 advertise to router, router1
+5.0 receive router ad from, router1
+15.01 
+15.01 receive incoming, Packet #1, out of, 4, with id, 0, from, Output_Res_0, to, User_0, tag, 108, delay, 1.2
+15.01 break this packet into, 1
+15.01 enqueing, Packet #1, out of, 4, with id, 0, from, Output_Res_0, to, User_0, tag, 108
+16.21 dequeuing, Packet #1, out of, 4, with id, 0, from, Output_Res_0, to, User_0, tag, 108
+27.01 
+27.01 receive incoming, Packet #2, out of, 4, with id, 1, from, Output_Res_0, to, User_0, tag, 108, delay, 1.2
+27.01 break this packet into, 1
+27.01 enqueing, Packet #2, out of, 4, with id, 1, from, Output_Res_0, to, User_0, tag, 108
+28.21 dequeuing, Packet #2, out of, 4, with id, 1, from, Output_Res_0, to, User_0, tag, 108
+39.01 
+39.01 receive incoming, Packet #3, out of, 4, with id, 2, from, Output_Res_0, to, User_0, tag, 108, delay, 1.2
+39.01 break this packet into, 1
+39.01 enqueing, Packet #3, out of, 4, with id, 2, from, Output_Res_0, to, User_0, tag, 108
+40.21 dequeuing, Packet #3, out of, 4, with id, 2, from, Output_Res_0, to, User_0, tag, 108
+51.01 
+51.01 receive incoming, Packet #4, out of, 4, with id, 3, from, Output_Res_0, to, User_0, tag, 20, delay, 0.4
+51.01 break this packet into, 1
+51.01 enqueing, Packet #4, out of, 4, with id, 3, from, Output_Res_0, to, User_0, tag, 20
+51.41 dequeuing, Packet #4, out of, 4, with id, 3, from, Output_Res_0, to, User_0, tag, 20
+64.23 receives, END_OF_SIMULATION, signal, from, GridInformationService

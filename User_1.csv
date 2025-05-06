@@ -1,0 +1,32 @@
+0.0 Creating a grid user entity with name = User_1, and id = 14
+0.0 User_1:Creating 5 Gridlets
+3.0 User_1Sending Gridlet #0 to Res_0
+3.0 User_1Sending Gridlet #1 to Res_0
+205.65699946949601 ack = true for Gridlet #1
+205.65699946949601 User_1Sending Gridlet #2 to Res_0
+205.65699946949601 User_1Sending Gridlet #3 to Res_0
+396.249998938992 ack = true for Gridlet #3
+396.249998938992 User_1Sending Gridlet #4 to Res_0
+401.249998938992 User_1: Receiving Gridlet #0 at time = 401.249998938992
+401.249998938992 User_1: Receiving Gridlet #1 at time = 401.249998938992
+401.249998938992 User_1: Receiving Gridlet #2 at time = 401.249998938992
+445.443598938992 User_1: Receiving Gridlet #3 at time = 445.443598938992
+525.507598938992 User_1: Receiving Gridlet #4 at time = 525.507598938992
+560.707598938992 
+-------- User_1 ----------------
+560.707598938992 Ping information for User_1
+Entity Name	Entry Time	Exit Time	 Bandwidth
+----------------------------------------------------------
+User_1		525.5076        529.5076        1000.000
+router1		529.5176        529.9176        10000.000
+router2		529.9276        533.9276        1000.000
+Res_0		533.9376        556.2776        1000.000
+router2		556.2876        556.6876        10000.000
+router1		556.6976        560.6976        1000.000
+User_1		560.7076            N/A            N/A
+
+Round Trip Time : 31.200 seconds
+Number of Hops  : 3
+Bottleneck Bandwidth : 1000.0 bits/s
+560.707598938992 -------- User_1 ----------------
+
