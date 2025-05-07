@@ -26,13 +26,81 @@ public class NetEx02
      */
     public static void main(String[] args)
     {
-    	Matrice matriceA = new Matrice("A");
-    	Matrice matriceB = new Matrice("B"); 
-    	while(!matriceA.canMultiply(matriceB)){
-    		System.err.println("nbr de ligne de la matrice A doit etre egale a nbr de column de a la matrice B");
-    		matriceA = new Matrice("A");
-        	matriceB = new Matrice("B");
-    	}
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("(1) pour cree une matrice\n(2) use example\n(3)random matrice :");
+        int choose = scanner.nextInt();
+        System.out.println(choose);
+    	Matrice matriceA = new Matrice();
+    	Matrice matriceB = new Matrice(); 
+        if (choose == 1) {
+        	matriceA = new Matrice("A");
+        	matriceB = new Matrice("B"); 
+        	while(!matriceA.canMultiply(matriceB)){
+        		System.err.println("nbr de ligne de la matrice A doit etre egale a nbr de column de a la matrice B");
+        		matriceA = new Matrice("A");
+            	matriceB = new Matrice("B");
+        	}
+        }
+        else if(choose == 2 ){
+            ArrayList<ArrayList<Float>> dataA = new ArrayList<>();
+            ArrayList<Float> rowA1 = new ArrayList<>();
+            rowA1.add(1.0f);
+            rowA1.add(2.0f);
+            ArrayList<Float> rowA2 = new ArrayList<>();
+            rowA2.add(3.0f);
+            rowA2.add(4.0f);
+            dataA.add(rowA1);
+            dataA.add(rowA2);
+            matriceA = new Matrice("A", dataA);
+
+            ArrayList<ArrayList<Float>> dataB = new ArrayList<>();
+            ArrayList<Float> rowB1 = new ArrayList<>();
+            rowB1.add(5.0f);
+            rowB1.add(6.0f);
+            ArrayList<Float> rowB2 = new ArrayList<>();
+            rowB2.add(7.0f);
+            rowB2.add(8.0f);
+            dataB.add(rowB1);
+            dataB.add(rowB2);
+            matriceB = new Matrice("B", dataB);
+        }else {
+        	 Random rng = new Random();
+
+             // pick dimensions:
+             // n in [3,10] 
+             int n = rng.nextInt(10 - 3 + 1) + 3;
+             // m in [3,10]
+             int m = rng.nextInt(10 - 3 + 1) + 3;
+             // p in [1,4]
+             int p = rng.nextInt(4 - 1 + 1) + 1;
+
+             System.out.printf("Building A of size %dx%d and B of size %dx%d%n", n, m, m, p);
+
+             // fill A with random floats 0–1 (or scale to any [min,max)):
+             ArrayList<ArrayList<Float>> dataA = new ArrayList<>();
+             for (int i = 0; i < n; i++) {
+                 ArrayList<Float> row = new ArrayList<>();
+                 for (int j = 0; j <m; j++) {
+                     row.add(rng.nextFloat(10 - 3 + 1) + 3);
+                 }
+                 dataA.add(row);
+             }
+             matriceA = new Matrice("A", dataA);
+
+             // fill B of size m x p
+             ArrayList<ArrayList<Float>> dataB = new ArrayList<>();
+             for (int i = 0; i < m; i++) {
+                 ArrayList<Float> row = new ArrayList<>();
+                 for (int j = 0; j < p; j++) {
+                     row.add(rng.nextFloat(10 - 3 + 1) + 3);
+                 }
+                 dataB.add(row);
+             }
+             matriceB = new Matrice("B", dataB);
+         }
+        
+    	
+    	
     	
     	
     	System.out.println(matriceA.toString());
@@ -59,7 +127,7 @@ public class NetEx02
             //////////////////////////////////////////
             // Second step: Creates one or more GridResource entities
 
-            double baud_rate = 1000; // bits/sec
+            double baud_rate = 20000; // bits/sec
             double propDelay = 10;   // propagation delay in millisecond
             int mtu = 1500;          // max. transmission unit in byte
             int i = 0;
@@ -84,8 +152,8 @@ public class NetEx02
             // number of Gridlets that will be sent to the resource
             
             
-            ///// do calculation to know ch7al kayen mn gridlet w (2*p)-1
-            int totalGridlet = matriceA.getLigne(0).size();
+            ///// do calculation to know ch7al kayen mn gridlet w (line*column)
+            int totalGridlet = matriceA.getNbrLigne()*matriceB.getNbrCol();
 
             // create users
             ArrayList<NetUser> userList = new ArrayList<NetUser>(num_user);
@@ -138,7 +206,7 @@ public class NetEx02
 
             // then connect r1 to r2 with 10Mb/s connection
             // For each host, specify which PacketScheduler entity to use.
-            baud_rate = 10000;
+            baud_rate = 20000;
             Link link = new SimpleLink("r1_r2_link", baud_rate, propDelay, mtu);
             FIFOScheduler r1Sched = new FIFOScheduler("r1_Sched");
             FIFOScheduler r2Sched = new FIFOScheduler("r2_Sched");
@@ -152,12 +220,9 @@ public class NetEx02
 
 
 
-            GridletList glList = null;
             for (i = 0; i < userList.size(); i++)
             {
                 obj = userList.get(i);
-                glList = obj.getGridletList();
-                printGridletList(glList, obj.get_name(), false);
             }
 
             System.out.println("\nFinish network example ...");
@@ -250,50 +315,7 @@ public class NetEx02
     /**
      * Prints the Gridlet objects
      */
-    private static void printGridletList(GridletList list, String name,
-                                         boolean detail)
-    {
-        int size = list.size();
-        Gridlet gridlet = null;
-
-        String indent = "    ";
-        System.out.println();
-        System.out.println("============= OUTPUT for " + name + " ==========");
-        System.out.println("Gridlet ID" + indent + "STATUS" + indent +
-                "Resource ID" + indent + "Cost");
-
-        // a loop to print the overall result
-        int i = 0;
-        for (i = 0; i < size; i++)
-        {
-            gridlet = (Gridlet) list.get(i);
-            System.out.print(indent + gridlet.getGridletID() + indent
-                    + indent);
-
-            System.out.print( gridlet.getGridletStatusString() );
-
-            System.out.println( indent + indent + gridlet.getResourceID() +
-                    indent + indent + gridlet.getProcessingCost() );
-        }
-
-        if (detail == true)
-        {
-            // a loop to print each Gridlet's history
-            for (i = 0; i < size; i++)
-            {
-                gridlet = (Gridlet) list.get(i);
-                System.out.println( gridlet.getGridletHistory() );
-
-                System.out.print("Gridlet #" + gridlet.getGridletID() );
-                System.out.println(", length = " + gridlet.getGridletLength()
-                        + ", finished so far = " +
-                        gridlet.getGridletFinishedSoFar() );
-                System.out.println("======================================\n");
-            }
-        }
-
-        		
-    }
+  
 
 } // end class
 

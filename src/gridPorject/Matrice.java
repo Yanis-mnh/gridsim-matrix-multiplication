@@ -13,6 +13,10 @@ public class Matrice {
     private  int nbrColonnes;
     private String name;
 
+    public Matrice( ) {
+    	this.name = "";
+    	this.matrice = new ArrayList<ArrayList<Float>>();
+    }
     public Matrice(String name) {
     	this.name = name;
         System.out.println("---------- Donnees de la MATRICE "+ name+" ---------");
@@ -45,7 +49,7 @@ public class Matrice {
         }
 
         matrice = new ArrayList<>();
-        System.out.println("\n🧮 Remplissage de la matrice :");
+        System.out.println("\nRemplissage de la matrice :");
 
         for (int i = 0; i < nbrLignes; i++) {
             ArrayList<Float> ligne = new ArrayList<>();
@@ -65,7 +69,13 @@ public class Matrice {
             matrice.add(ligne);
         }
     }
-
+    
+    public Matrice (String name,ArrayList<ArrayList<Float>> matrice) {
+    	this.name = name;
+    	this.matrice = matrice;
+        this.nbrLignes = matrice.size();
+        this.nbrColonnes = matrice.get(0).size();
+    }
 
     public ArrayList<Float> getLigne(int ligne) {
         if (ligne < 0 || ligne >= nbrLignes)
@@ -86,14 +96,19 @@ public class Matrice {
     public boolean canMultiply(Matrice autre) {
         return this.nbrColonnes == autre.nbrLignes;
     }
-
+    public int getNbrLigne() {
+		return nbrLignes;
+	}
+    public int getNbrCol() {
+		return nbrColonnes;
+	}
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("=========== MATRICE "+ this.name+" ===========\n");
         for (ArrayList<Float> ligne : matrice) {
             for (float val : ligne) {
-                sb.append(String.format("%8.2f", val));
+                sb.append(String.format("%.2f\t", val));
             }
             sb.append("\n");
         }

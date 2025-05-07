@@ -55,7 +55,7 @@ class NetUser extends GridSim
 
         // Creates a list of Gridlets or Tasks for this grid user
         write(name + ":Creating " + totalGridlet +" Gridlets");
-        this.createGridlet(myId_, totalGridlet);
+        this.createGridlet(myId_, totalGridlet,matriceA,matriceB);
     }
 
     /**
@@ -122,9 +122,14 @@ class NetUser extends GridSim
             
         }
         ///////////////////////////////////////   afficher la matrice //////////////////////////////
+        System.out.print("---------- Donnees de la MATRICE Resultat ---------");
         for(int k=0;k<listResult.size();k++) {
-        	System.out.println("resultat de la mult: "+ listResult.get(k).getResult());
+        	if(k % matriceB.getNbrCol() ==  0 ) System.out.println("");
+        	System.out.print( String.format("%.2f \t",listResult.get(k).getResult()));
+        	
+        	
         }
+        System.out.println("");
 
 
 
@@ -155,17 +160,23 @@ class NetUser extends GridSim
      * @param userID        owner ID of a Gridlet
      * @param numGridlet    number of Gridlet to be created
      */
-    private void createGridlet(int userID, int numGridlet)
+    private void createGridlet(int userID, int numGridlet, Matrice A , Matrice B)
     {
-        int data = 5000;
-        for (int i = 0; i < numGridlet; i++)
+        int id = 0;
+        for (int i = 0; i < A.getNbrLigne(); i++)
         {
-            // Creates a Gridlet
-            MyGridlet gl = new MyGridlet(i, data, data, data, matriceA.getLigne(i), matriceB.getColonne(i));
-            gl.setUserID(userID);
+        	for (int j =0;j< B.getNbrCol();j++) {
+        		 // Creates a Gridlet
+        		ArrayList<Float> matAL = matriceA.getLigne(i);
+        		ArrayList<Float> matBC= matriceB.getColonne(j);
+                MyGridlet gl = new MyGridlet(id, (matriceA.getNbrLigne()*2)-1,  matAL.size() * matBC.size(), 1, matAL, matBC);
+                gl.setUserID(userID);
 
-            // add this gridlet into a list
-            this.list_.add(gl);
+                // add this gridlet into a list
+                this.list_.add(gl);
+                id++;
+        	}
+           
         }
     }
 

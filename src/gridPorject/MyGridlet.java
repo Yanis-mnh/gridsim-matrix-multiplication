@@ -19,7 +19,6 @@ public class MyGridlet extends Gridlet {
 		super(id,length,input,out);
 		this.ligne = ligne;
 		this.column = column;
-		System.err.println(ligne);
 		
 	}
 	

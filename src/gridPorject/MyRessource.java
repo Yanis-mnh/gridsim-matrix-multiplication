@@ -9,7 +9,7 @@ import gridsim.*;
 import gridsim.net.SimpleLink;
 
 public class MyRessource extends GridResource {
-	public static final int MY_GRIDLET_TAG = 10001;
+	public static final int MY_GRIDLET_TAG = 30000;
 	static int id = 0;
     public MyRessource(String name, double baudRate, ResourceCharacteristics resChar, ResourceCalendar calendar) throws Exception {
         super(name, baudRate, resChar, calendar);
@@ -32,7 +32,7 @@ public class MyRessource extends GridResource {
 
 
 	private void processGridlet(MyGridlet gridlet) {
-		System.out.println("dhsakjhdjksahdjkashkjdsahkjdhaskjdhkajs");
+		System.out.println("=============================================");
 	    ArrayList<Float> row = gridlet.get_ligne();
 	    ArrayList<Float> col = gridlet.get_column();
 
@@ -40,43 +40,23 @@ public class MyRessource extends GridResource {
 
 	    if (row.size() != col.size()) {
 	        System.out.println("ERROR: Row and column vectors are not the same size.");
-	        return; // Don't proceed with invalid data
+	        return; 
 	    }
-	    System.out.println(row.size());
 	    for (int i = 0; i < row.size(); i++) {
 	        result += row.get(i) * col.get(i);
 	    }
 
-	    System.out.println("The result is: " + result);
 	    System.out.printf("[%.2fs] [RES: %s] Calculé Gridlet #%d → %.2f\n",
 	            GridSim.clock(), super.get_name(), gridlet.getGridletID(), result);
 
-	    // Store the result in a MyGridLetResult object
+	    // Store the result in a MyGridlet object
 	    gridlet.setResult(result);
 
 	    // Send the result back to the user
 	    IO_data data = new IO_data(gridlet, gridlet.getGridletFileSize(), gridlet.getUserID());
 	    super.send(super.output, GridSimTags.SCHEDULE_NOW, GridSimTags.GRIDLET_RETURN, data);
+	    System.out.println("=============================================");
 	}
-
-		/*
-
-		System.out.printf("[%.2fs] [RES: %s] Calculé Gridlet #%d → %.2f\n", GridSim.clock(), super.get_name(),
-				gridlet.getGridletID(), result);
-
-		IO_data data = new IO_data(gridlet, gridlet.getGridletFileSize(), gridlet.getUserID());
-		super.send(super.output, GridSimTags.SCHEDULE_NOW, GridSimTags.GRIDLET_RETURN, data);
-		
-		*/
-		// super.send(super.output, GridSimTags.SCHEDULE_NOW,GridSimTags.GRIDLET_RETURN,
-		// gridlet);
-
-		/*
-		 * System.out.print("[DEBUG] Traitement Gridlet #" + gridlet.getGridletID() +
-		 * ": row = "); for (double val : row) System.out.print(val + " ");
-		 * System.out.print(", col = "); for (double val : col) System.out.print(val +
-		 * " "); System.out.println();
-		 */
 
 	
 

@@ -1,4 +1,34 @@
 0.0 Creating a grid user entity with name = User_0, and id = 10
-0.0 User_0:Creating 1 Gridlets
+0.0 User_0:Creating 16 Gridlets
 3.0 User_0Sending Gridlet #0 to Res_0
-64.23 User_0: Receiving Gridlet #0 at time = 64.23
+3.0 User_0Sending Gridlet #1 to Res_0
+3.0 User_0Sending Gridlet #2 to Res_0
+3.0 User_0Sending Gridlet #3 to Res_0
+3.0 User_0Sending Gridlet #4 to Res_0
+3.0 User_0Sending Gridlet #5 to Res_0
+3.0 User_0Sending Gridlet #6 to Res_0
+3.0 User_0Sending Gridlet #7 to Res_0
+3.0 User_0Sending Gridlet #8 to Res_0
+3.0 User_0Sending Gridlet #9 to Res_0
+3.0 User_0Sending Gridlet #10 to Res_0
+3.0 User_0Sending Gridlet #11 to Res_0
+3.0 User_0Sending Gridlet #12 to Res_0
+3.0 User_0Sending Gridlet #13 to Res_0
+3.0 User_0Sending Gridlet #14 to Res_0
+3.0 User_0Sending Gridlet #15 to Res_0
+5.027199999999999 User_0: Receiving Gridlet #0 at time = 5.027199999999999
+5.037199999999999 User_0: Receiving Gridlet #1 at time = 5.037199999999999
+5.047199999999998 User_0: Receiving Gridlet #2 at time = 5.047199999999998
+5.057199999999998 User_0: Receiving Gridlet #3 at time = 5.057199999999998
+5.067199999999998 User_0: Receiving Gridlet #4 at time = 5.067199999999998
+5.077199999999998 User_0: Receiving Gridlet #5 at time = 5.077199999999998
+5.0871999999999975 User_0: Receiving Gridlet #6 at time = 5.0871999999999975
+5.097199999999997 User_0: Receiving Gridlet #7 at time = 5.097199999999997
+5.107199999999997 User_0: Receiving Gridlet #8 at time = 5.107199999999997
+5.117199999999997 User_0: Receiving Gridlet #9 at time = 5.117199999999997
+5.127199999999997 User_0: Receiving Gridlet #10 at time = 5.127199999999997
+5.137199999999996 User_0: Receiving Gridlet #11 at time = 5.137199999999996
+5.147199999999996 User_0: Receiving Gridlet #12 at time = 5.147199999999996
+5.157199999999996 User_0: Receiving Gridlet #13 at time = 5.157199999999996
+5.167199999999996 User_0: Receiving Gridlet #14 at time = 5.167199999999996
+5.177199999999996 User_0: Receiving Gridlet #15 at time = 5.177199999999996

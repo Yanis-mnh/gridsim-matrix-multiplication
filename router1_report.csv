@@ -3,24 +3,84 @@
 0.0 register this entity to GridInformationService entity.
 0.0 advertise to router, router2
 5.0 receive router ad from, router2
-16.220000000000002 
-16.220000000000002 receive incoming, Packet #1, out of, 4, with id, 0, from, Output_Res_0, to, User_0, tag, 108, delay, 12.0
-16.220000000000002 break this packet into, 1
-16.220000000000002 enqueing, Packet #1, out of, 4, with id, 0, from, Output_Res_0, to, User_0, tag, 108
-28.220000000000002 dequeuing, Packet #1, out of, 4, with id, 0, from, Output_Res_0, to, User_0, tag, 108
-28.220000000000002 
-28.220000000000002 receive incoming, Packet #2, out of, 4, with id, 1, from, Output_Res_0, to, User_0, tag, 108, delay, 12.0
-28.220000000000002 break this packet into, 1
-28.220000000000002 enqueing, Packet #2, out of, 4, with id, 1, from, Output_Res_0, to, User_0, tag, 108
-40.22 dequeuing, Packet #2, out of, 4, with id, 1, from, Output_Res_0, to, User_0, tag, 108
-40.22 
-40.22 receive incoming, Packet #3, out of, 4, with id, 2, from, Output_Res_0, to, User_0, tag, 108, delay, 12.0
-40.22 break this packet into, 1
-40.22 enqueing, Packet #3, out of, 4, with id, 2, from, Output_Res_0, to, User_0, tag, 108
-51.419999999999995 
-51.419999999999995 receive incoming, Packet #4, out of, 4, with id, 3, from, Output_Res_0, to, User_0, tag, 20, delay, 0.0
-51.419999999999995 break this packet into, 1
-51.419999999999995 enqueing, Packet #4, out of, 4, with id, 3, from, Output_Res_0, to, User_0, tag, 20
-52.22 dequeuing, Packet #3, out of, 4, with id, 2, from, Output_Res_0, to, User_0, tag, 108
-64.22 dequeuing, Packet #4, out of, 4, with id, 3, from, Output_Res_0, to, User_0, tag, 20
-64.23 receives, END_OF_SIMULATION, signal, from, GridInformationService
+5.013599999999999 
+5.013599999999999 receive incoming, Packet #1, out of, 1, with id, 0, from, Output_Res_0, to, User_0, tag, 20, delay, 0.0036
+5.013599999999999 break this packet into, 1
+5.013599999999999 enqueing, Packet #1, out of, 1, with id, 0, from, Output_Res_0, to, User_0, tag, 20
+5.017199999999999 dequeuing, Packet #1, out of, 1, with id, 0, from, Output_Res_0, to, User_0, tag, 20
+5.023599999999999 
+5.023599999999999 receive incoming, Packet #1, out of, 1, with id, 1, from, Output_Res_0, to, User_0, tag, 20, delay, 0.0036
+5.023599999999999 break this packet into, 1
+5.023599999999999 enqueing, Packet #1, out of, 1, with id, 1, from, Output_Res_0, to, User_0, tag, 20
+5.027199999999999 dequeuing, Packet #1, out of, 1, with id, 1, from, Output_Res_0, to, User_0, tag, 20
+5.033599999999999 
+5.033599999999999 receive incoming, Packet #1, out of, 1, with id, 2, from, Output_Res_0, to, User_0, tag, 20, delay, 0.0036
+5.033599999999999 break this packet into, 1
+5.033599999999999 enqueing, Packet #1, out of, 1, with id, 2, from, Output_Res_0, to, User_0, tag, 20
+5.037199999999999 dequeuing, Packet #1, out of, 1, with id, 2, from, Output_Res_0, to, User_0, tag, 20
+5.043599999999999 
+5.043599999999999 receive incoming, Packet #1, out of, 1, with id, 3, from, Output_Res_0, to, User_0, tag, 20, delay, 0.0036
+5.043599999999999 break this packet into, 1
+5.043599999999999 enqueing, Packet #1, out of, 1, with id, 3, from, Output_Res_0, to, User_0, tag, 20
+5.047199999999998 dequeuing, Packet #1, out of, 1, with id, 3, from, Output_Res_0, to, User_0, tag, 20
+5.0535999999999985 
+5.0535999999999985 receive incoming, Packet #1, out of, 1, with id, 4, from, Output_Res_0, to, User_0, tag, 20, delay, 0.0036
+5.0535999999999985 break this packet into, 1
+5.0535999999999985 enqueing, Packet #1, out of, 1, with id, 4, from, Output_Res_0, to, User_0, tag, 20
+5.057199999999998 dequeuing, Packet #1, out of, 1, with id, 4, from, Output_Res_0, to, User_0, tag, 20
+5.063599999999998 
+5.063599999999998 receive incoming, Packet #1, out of, 1, with id, 5, from, Output_Res_0, to, User_0, tag, 20, delay, 0.0036
+5.063599999999998 break this packet into, 1
+5.063599999999998 enqueing, Packet #1, out of, 1, with id, 5, from, Output_Res_0, to, User_0, tag, 20
+5.067199999999998 dequeuing, Packet #1, out of, 1, with id, 5, from, Output_Res_0, to, User_0, tag, 20
+5.073599999999998 
+5.073599999999998 receive incoming, Packet #1, out of, 1, with id, 6, from, Output_Res_0, to, User_0, tag, 20, delay, 0.0036
+5.073599999999998 break this packet into, 1
+5.073599999999998 enqueing, Packet #1, out of, 1, with id, 6, from, Output_Res_0, to, User_0, tag, 20
+5.077199999999998 dequeuing, Packet #1, out of, 1, with id, 6, from, Output_Res_0, to, User_0, tag, 20
+5.083599999999998 
+5.083599999999998 receive incoming, Packet #1, out of, 1, with id, 7, from, Output_Res_0, to, User_0, tag, 20, delay, 0.0036
+5.083599999999998 break this packet into, 1
+5.083599999999998 enqueing, Packet #1, out of, 1, with id, 7, from, Output_Res_0, to, User_0, tag, 20
+5.0871999999999975 dequeuing, Packet #1, out of, 1, with id, 7, from, Output_Res_0, to, User_0, tag, 20
+5.093599999999998 
+5.093599999999998 receive incoming, Packet #1, out of, 1, with id, 8, from, Output_Res_0, to, User_0, tag, 20, delay, 0.0036
+5.093599999999998 break this packet into, 1
+5.093599999999998 enqueing, Packet #1, out of, 1, with id, 8, from, Output_Res_0, to, User_0, tag, 20
+5.097199999999997 dequeuing, Packet #1, out of, 1, with id, 8, from, Output_Res_0, to, User_0, tag, 20
+5.1035999999999975 
+5.1035999999999975 receive incoming, Packet #1, out of, 1, with id, 9, from, Output_Res_0, to, User_0, tag, 20, delay, 0.0036
+5.1035999999999975 break this packet into, 1
+5.1035999999999975 enqueing, Packet #1, out of, 1, with id, 9, from, Output_Res_0, to, User_0, tag, 20
+5.107199999999997 dequeuing, Packet #1, out of, 1, with id, 9, from, Output_Res_0, to, User_0, tag, 20
+5.113599999999997 
+5.113599999999997 receive incoming, Packet #1, out of, 1, with id, 10, from, Output_Res_0, to, User_0, tag, 20, delay, 0.0036
+5.113599999999997 break this packet into, 1
+5.113599999999997 enqueing, Packet #1, out of, 1, with id, 10, from, Output_Res_0, to, User_0, tag, 20
+5.117199999999997 dequeuing, Packet #1, out of, 1, with id, 10, from, Output_Res_0, to, User_0, tag, 20
+5.123599999999997 
+5.123599999999997 receive incoming, Packet #1, out of, 1, with id, 11, from, Output_Res_0, to, User_0, tag, 20, delay, 0.0036
+5.123599999999997 break this packet into, 1
+5.123599999999997 enqueing, Packet #1, out of, 1, with id, 11, from, Output_Res_0, to, User_0, tag, 20
+5.127199999999997 dequeuing, Packet #1, out of, 1, with id, 11, from, Output_Res_0, to, User_0, tag, 20
+5.133599999999997 
+5.133599999999997 receive incoming, Packet #1, out of, 1, with id, 12, from, Output_Res_0, to, User_0, tag, 20, delay, 0.0036
+5.133599999999997 break this packet into, 1
+5.133599999999997 enqueing, Packet #1, out of, 1, with id, 12, from, Output_Res_0, to, User_0, tag, 20
+5.137199999999996 dequeuing, Packet #1, out of, 1, with id, 12, from, Output_Res_0, to, User_0, tag, 20
+5.143599999999997 
+5.143599999999997 receive incoming, Packet #1, out of, 1, with id, 13, from, Output_Res_0, to, User_0, tag, 20, delay, 0.0036
+5.143599999999997 break this packet into, 1
+5.143599999999997 enqueing, Packet #1, out of, 1, with id, 13, from, Output_Res_0, to, User_0, tag, 20
+5.147199999999996 dequeuing, Packet #1, out of, 1, with id, 13, from, Output_Res_0, to, User_0, tag, 20
+5.153599999999996 
+5.153599999999996 receive incoming, Packet #1, out of, 1, with id, 14, from, Output_Res_0, to, User_0, tag, 20, delay, 0.0036
+5.153599999999996 break this packet into, 1
+5.153599999999996 enqueing, Packet #1, out of, 1, with id, 14, from, Output_Res_0, to, User_0, tag, 20
+5.157199999999996 dequeuing, Packet #1, out of, 1, with id, 14, from, Output_Res_0, to, User_0, tag, 20
+5.163599999999996 
+5.163599999999996 receive incoming, Packet #1, out of, 1, with id, 15, from, Output_Res_0, to, User_0, tag, 20, delay, 0.0036
+5.163599999999996 break this packet into, 1
+5.163599999999996 enqueing, Packet #1, out of, 1, with id, 15, from, Output_Res_0, to, User_0, tag, 20
+5.167199999999996 dequeuing, Packet #1, out of, 1, with id, 15, from, Output_Res_0, to, User_0, tag, 20
+5.177199999999996 receives, END_OF_SIMULATION, signal, from, GridInformationService
